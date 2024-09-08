@@ -16,6 +16,7 @@
 		2F2B54072C8BBB8100DBA70B /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B54062C8BBB8100DBA70B /* AddBookView.swift */; };
 		2F2B54092C8BBF5000DBA70B /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B54082C8BBF5000DBA70B /* RatingView.swift */; };
 		2F2B540B2C8BC26B00DBA70B /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B540A2C8BC26B00DBA70B /* EmojiRatingView.swift */; };
+		2F2B540D2C8CB4A500DBA70B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B540C2C8CB4A500DBA70B /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		2F2B54062C8BBB8100DBA70B /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		2F2B54082C8BBF5000DBA70B /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		2F2B540A2C8BC26B00DBA70B /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		2F2B540C2C8CB4A500DBA70B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				2F2B53F42C8A362500DBA70B /* Bookworm_Project11App.swift */,
-				2F2B54062C8BBB8100DBA70B /* AddBookView.swift */,
-				2F2B540A2C8BC26B00DBA70B /* EmojiRatingView.swift */,
 				2F2B53F62C8A362500DBA70B /* ContentView.swift */,
+				2F2B540A2C8BC26B00DBA70B /* EmojiRatingView.swift */,
+				2F2B54062C8BBB8100DBA70B /* AddBookView.swift */,
+				2F2B540C2C8CB4A500DBA70B /* DetailView.swift */,
 				2F2B54082C8BBF5000DBA70B /* RatingView.swift */,
 				2F2B54042C8BB79500DBA70B /* Book.swift */,
 				2F2B54022C8A4C6400DBA70B /* StudentForLesson.swift */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F2B54052C8BB79500DBA70B /* Book.swift in Sources */,
+				2F2B540D2C8CB4A500DBA70B /* DetailView.swift in Sources */,
 				2F2B53F72C8A362500DBA70B /* ContentView.swift in Sources */,
 				2F2B540B2C8BC26B00DBA70B /* EmojiRatingView.swift in Sources */,
 				2F2B54032C8A4C6400DBA70B /* StudentForLesson.swift in Sources */,

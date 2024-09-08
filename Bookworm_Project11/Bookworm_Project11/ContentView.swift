@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
-    @Query var books: [Book]
+    @Query(sort: [
+        SortDescriptor(\Book.title),
+        SortDescriptor(\Book.author) //2-3 sort fields is good so if two books have the same title, it would sort if by title and then author
+    ]) var books: [Book]
+    //SortDescriptor creates an array, can sort by multiple things
+    //@Query(sort: \Book.rating, order: .reverse) var books: [Book]
+    //@Query(sort: Book.title) var books: [Book]
+    
     
     @State private var showingAddScreen = false
     
@@ -18,23 +25,34 @@ struct ContentView: View {
         NavigationStack {
             //Text("Count: \(books.count)")
             List {
-                ForEach(books) {book in
+                ForEach(books) { book in
                     NavigationLink(value: book) {
                         HStack {
                             EmojiRatingView(rating: book.rating)
                                 .font(.largeTitle)
+                            
                             VStack(alignment: .leading) {
                                 Text(book.title)
                                     .font(.headline)
+                                    .foregroundStyle(book.rating == 1 ? .red : .primary)
+                                    .fontWeight(.bold)
                                 Text(book.author)
-                                    .foregroundStyle(.secondary)
+                                    .foregroundStyle(book.rating == 1 ? .red : .secondary)
+                                
                             }
                         }
                     }
                 }
+                .onDelete(perform: deleteBooks)
             }
             .navigationTitle("Bookworm")
+            .navigationDestination(for: Book.self) { book in
+                DetailView(book: book)
+            }
                 .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        EditButton()
+                    }
                     ToolbarItem(placement: .topBarTrailing) {
                         Button("Add Book", systemImage: "plus") {
                             showingAddScreen.toggle()
@@ -46,6 +64,14 @@ struct ContentView: View {
             }
         }
     }
+    
+    func deleteBooks(at offsets: IndexSet) {
+        for offset in offsets {
+            let book = books[offset]
+            modelContext.delete(book)
+        }
+    }
+    
 }
 
 //DAY 53 - Binding, texteditor, SwiftData/Model
